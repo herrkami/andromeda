@@ -1,15 +1,15 @@
 media:
-  - name: documents
-    input: src/media/documents
-    output: /media/documents
-    categories: [ document ]
+  - name: files
+    input: src/media/files
+    output: /media/files
+    categories: [ document, video, audio, compressed ]
   - name: images
     input: src/media/images
     output: /media/images
     categories: [ image ]
 content:
   - name: nodes
-    label: Nodes
+    label: Flow chart nodes
     type: collection
     path: src/md/nodes
     subfolders: false
@@ -44,8 +44,10 @@ content:
           value: "{id}"
           label: "{name} ({vendor})"
   - name: tools_proprietary
+    label: Proprietary tools and components
     type: collection
     path: src/md/tools/proprietary
+    subfolders: false
     fields:
       - name: name
         label: Name of the tool or component
@@ -63,8 +65,10 @@ content:
         label: Description
         component: main_description
   - name: tools_open_source
+    label: Open source tools and components
     type: collection
     path: src/md/tools/open_source
+    subfolders: false
     fields:
       - name: name
         label: Name of the tool or component
@@ -81,6 +85,32 @@ content:
       - name: description
         label: Description
         component: main_description
+  - name: projects
+    label: Research projects
+    type: collection
+    path: src/md/projects
+    subfolders: false
+    fields:
+      - name: acronym
+        label: Acronym
+        type: string
+        required: true
+      - name: full_title
+        label: Full title
+        type: string
+        required: false
+      - name: links
+        label: Links
+        component: link
+        required: true
+      - name: duration
+        label: Project duration
+        component: duration
+        required: true
+      - name: description
+        label: Project description
+        component: main_description
+        required: false
 components:
   link:
     label: Link
@@ -92,10 +122,20 @@ components:
     description: Full description
     options:
       media: true
+  duration:
+    label: Duration
+    type: object
+    fields:
+      - name: start_date
+        label: Start date
+        type: date
+      - name: end_date
+        label: End date
+        type: date
 settings:
+  hide: false
   content:
-    nodes:
-      hide: true
+    merge: true
   
 
       
