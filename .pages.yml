@@ -113,17 +113,14 @@ content:
         required: false
 components:
   link:
-    label: Link
     type: string
     pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
   main_description:
-    label: Description
     type: rich-text
     description: Full description
     options:
       media: true
   duration:
-    label: Duration
     type: object
     fields:
       - name: start_date
