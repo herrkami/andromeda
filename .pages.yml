@@ -75,5 +75,8 @@ content:
         type: string
         pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
         list: true
+      - name: description
+        label: Description
+        description: What does it do? How important is it? What is special about it?
       
         
