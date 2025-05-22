@@ -16,14 +16,14 @@ content:
     filename: "{fields.title}.md"
     fields:
       - name: title
-        label: Title of the node entry
-        type: text
+        label: Node acronym
+        type: string
         default: Node title
         hidden: true
         required: true
-      - name: summary
+      - name: subtitle
         label: Single sentence summary
-        type: text
+        type: string
         required: true
       - name: links
         label: Related links

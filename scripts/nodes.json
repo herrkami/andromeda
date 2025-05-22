@@ -1,0 +1,286 @@
+{
+    "nodes": {
+        "IDEA": {
+            "title": "Idea",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "Every good chip starts with a good idea!"
+            },
+        "PDK": {
+            "title": "PDK",
+            "subtitle": "Process Development Kit",
+            "wiki_link": "https://en.wikipedia.org/wiki/Process_design_kit",
+            "description": ""
+            },
+        "ARCH": {
+            "title": "Architecture and specification",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Integrated_circuit_design",
+            "description": ""
+            },
+        "SCH": {
+            "title": "Schematic",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Circuit_diagram",
+            "description": "The logic circuit diagram"
+            },
+        "NET_SCH": {
+            "title": "Netlist",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Netlist",
+            "description": ""
+            },
+        "SIM_ANA_SCH": {
+            "title": "Schematic simulation",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Electronic_circuit_simulation",
+            "description": ""
+            },
+        "LAY": {
+            "title": "Layout",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Integrated_circuit_layout",
+            "description": ""
+            },
+        "DRC": {
+            "title": "DRC",
+            "subtitle": "Design Rule Check",
+            "wiki_link": "https://en.wikipedia.org/wiki/Design_rule_checking",
+            "description": ""
+            },
+        "LVS": {
+            "title": "LVS",
+            "subtitle": "Layout vs. Schematic",
+            "wiki_link": "https://en.wikipedia.org/wiki/Layout_Versus_Schematic",
+            "description": ""
+            },
+        "PEX": {
+            "title": "PEX",
+            "subtitle": "Parasitic Extraction",
+            "wiki_link": "https://en.wikipedia.org/wiki/Parasitic_extraction",
+            "description": ""
+            },
+        "NET_PAR": {
+            "title": "Parasitic netlist (layout)",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Equivalent_circuit",
+            "description": "Extended netlist (equivalent circuit) containing all parasitic components"
+            },
+        "SIM_ANA_PEX": {
+            "title": "Post layout simulation",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "Simulation of the extracted netlist"
+            },
+        "GEO": {
+            "title": "Chip geometry",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": ""
+            },
+        "IO": {
+            "title": "I/O specification",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "Specification of pads, interfaces, links, etc."
+            },
+        "TIMING_CNSTR": {
+            "title": "Timing constraints (clock speed, latency, etc.)",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Timing_margin",
+            "description": ""
+            },
+        "SDL": {
+            "title": "System description",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": ""
+            },
+        "HDL": {
+            "title": "HDL",
+            "subtitle": "Hardware description languages",
+            "wiki_link": "https://en.wikipedia.org/wiki/Hardware_description_language",
+            "description": ""
+            },
+        "VIS": {
+            "title": "Visual description (schematics)",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Circuit_diagram",
+            "description": ""
+            },
+        "HDL_COMP": {
+            "title": "Compiler/transpiler",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Silicon_compiler",
+            "description": ""
+            },
+        "RTL": {
+            "title": "RTL",
+            "subtitle": "Register transfer level",
+            "wiki_link": "https://en.wikipedia.org/wiki/Register-transfer_level",
+            "description": "Register transfer level or gate level description"
+            },
+        "SYNTH": {
+            "title": "Synthesis",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/High-level_synthesis",
+            "description": ""
+            },
+        "NET_DIG": {
+            "title": "Logical netlist",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": ""
+            },
+        "VERIFICATION_FORMAL": {
+            "title": "Formal verification",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Formal_verification",
+            "description": ""
+            },
+        "VERIFICATION_FUNCTIONAL": {
+            "title": "Functional verification",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Functional_verification",
+            "description": ""
+            },
+        "UNIT_TESTS": {
+            "title": "Unit test",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Unit_testing",
+            "description": ""
+            },
+        "SYSTEM_TESTS": {
+            "title": "System test",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Logic_simulation",
+            "description": ""
+            },
+        "TIMING_LOGIC": {
+            "title": "Timing simulation and analysis",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Dynamic_timing_verification",
+            "description": ""
+            },
+        "CTS": {
+            "title": "CTS",
+            "subtitle": "Clock tree synthesis",
+            "wiki_link": "https://en.wikipedia.org/wiki/Clock_signal#Distribution",
+            "description": ""
+            },
+        "ROUTE": {
+            "title": "Routing",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Routing_(electronic_design_automation)",
+            "description": ""
+            },
+        "FLR_PLANNING": {
+            "title": "Floor planning",
+            "subtitle": "",
+            "wiki_link": "https://en.wikipedia.org/wiki/Floorplan_(microelectronics)",
+            "description": ""
+            },
+        "PWR_PLANNING": {
+            "title": "Power planning",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "Structure and distribution of power lines:\n\nhttps://www.physicaldesign4u.com/2020/01/power-planning.html"
+            },
+        "LAY_DIG": {
+            "title": "Layout",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "https://en.wikipedia.org/wiki/Integrated_circuit_layout"
+            },
+        "DRC_DIG": {
+            "title": "DRC",
+            "subtitle": "Design Rule Check",
+            "wiki_link": "https://en.wikipedia.org/wiki/Design_rule_checking",
+            "description": ""
+            },
+        "LVS_DIG": {
+            "title": "LVS",
+            "subtitle": "Layout vs. Schematic",
+            "wiki_link": "https://en.wikipedia.org/wiki/Layout_Versus_Schematic",
+            "description": ""
+            },
+        "RCX": {
+            "title": "RCX",
+            "subtitle": "Resistance/Capacitance Extraction",
+            "wiki_link": "https://en.wikipedia.org/wiki/Parasitic_extraction",
+            "description": "Similar to PEX but simpler in that only resistances and capacitances are being extracted. Mostly relevant for longer lines that connect distant logic units."
+            },
+        "STA": {
+            "title": "STA",
+            "subtitle": "Static Timing Analysis",
+            "wiki_link": "https://en.wikipedia.org/wiki/Static_timing_analysis",
+            "description": ""
+            },
+        "PEX_DIG": {
+            "title": "PEX",
+            "subtitle": "Parasitic extraction",
+            "wiki_link": "https://en.wikipedia.org/wiki/Parasitic_extraction",
+            "description": "Full PEX"
+            },
+        "LITHO": {
+            "title": "Litho hotspot analysis",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "https://semiengineering.com/knowledge_centers/eda-design/methodologies-and-flows/design-for-manufacturing-dfm/"
+            },
+        "CMP": {
+            "title": "CMP",
+            "subtitle": "Chemical-mechanical polishing",
+            "wiki_link": "",
+            "description": "https://semiengineering.com/knowledge_centers/eda-design/methodologies-and-flows/design-for-manufacturing-dfm/"
+            },
+        "CCA": {
+            "title": "CCA",
+            "subtitle": "Critical area analysis",
+            "wiki_link": "",
+            "description": "https://semiengineering.com/knowledge_centers/eda-design/methodologies-and-flows/design-for-manufacturing-dfm/"
+            },
+        "VIA": {
+            "title": "Via enhancement",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "https://semiengineering.com/knowledge_centers/eda-design/methodologies-and-flows/design-for-manufacturing-dfm/"
+            },
+        "CFA": {
+            "title": "CFA",
+            "subtitle": "Critical feature analysis",
+            "wiki_link": "",
+            "description": "https://semiengineering.com/knowledge_centers/eda-design/methodologies-and-flows/design-for-manufacturing-dfm/"
+            },
+        "PATMATCH": {
+            "title": "Pattern matching",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "https://semiengineering.com/knowledge_centers/eda-design/methodologies-and-flows/design-for-manufacturing-dfm/"
+            },
+        "GDS": {
+            "title": "GDS",
+            "subtitle": "Graphic Data Stream",
+            "wiki_link": "https://en.wikipedia.org/wiki/GDSII",
+            "description": ""
+            },
+        "MPW": {
+            "title": "MPW",
+            "subtitle": "Multi-project wafer",
+            "wiki_link": "https://en.wikipedia.org/wiki/Multi-project_wafer_service",
+            "description": ""
+            },
+        "WAFER": {
+            "title": "Wafer",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "https://en.wikipedia.org/wiki/Wafer_(electronics)"
+            },
+        "FOUNDRY": {
+            "title": "Foundry",
+            "subtitle": "",
+            "wiki_link": "",
+            "description": "https://en.wikipedia.org/wiki/Semiconductor_fabrication_plant"
+            }
+    }
+}
