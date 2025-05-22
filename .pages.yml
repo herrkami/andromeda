@@ -12,6 +12,7 @@ content:
     label: Nodes
     type: collection
     path: src/md/nodes
+    subfolders: false
     filename: "{title}.md"
     fields:
       - name: title
