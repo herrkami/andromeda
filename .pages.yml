@@ -36,7 +36,7 @@ content:
           collection: tools_proprietary
           multiple: true
           search: "name,vendor"
-          value: "{path}"
+          value: "{path}/{filename}"
           label: "{name} ({vendor})"
       - name: tool_list_open_source
         label: Related open source tools and components
@@ -46,7 +46,7 @@ content:
           multiple: true
           search: "name,vendor"
           value: "{path}/{filename}"
-          label: "{name} ({vendor})"
+          label: "{name}"
   - name: tools_proprietary
     label: Proprietary tools and components
     type: collection
@@ -97,9 +97,9 @@ content:
         options:
           collection: tools_open_source
           multiple: true
-          search: "name,vendor"
+          search: "name"
           value: "{path}/{filename}"
-          label: "{name} ({vendor})"
+          label: "{name}"
   - name: projects
     label: Research projects
     type: collection
