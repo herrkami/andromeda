@@ -25,6 +25,10 @@ content:
         label: Single sentence summary
         type: text
         required: true
+      - name: links
+        label: Related links
+        component: link
+        list: true
       - name: tool_list_proprietary
         label: Related proprietary tools and components
         type: reference
