@@ -8,7 +8,8 @@ media:
     output: /media/images
     categories: [ image ]
 content:
-  - name: node_descriptions
+  - name: nodes
+    label: Nodes
     type: collection
     path: src/md/nodes
     fields:
@@ -46,7 +47,7 @@ content:
     fields:
       - name: name
         label: Name of the tool or component
-        type: text
+        type: string
         required: true
       - name: vendor
         label: Vendor
@@ -56,13 +57,16 @@ content:
         label: Related links
         component: link
         list: true
+      - name: description
+        label: Description
+        component: main_description
   - name: tools_open_source
     type: collection
     path: src/md/tools/open_source
     fields:
       - name: name
         label: Name of the tool or component
-        type: text
+        type: string
         required: true
       - name: repository
         label: Link to the repository
@@ -74,12 +78,19 @@ content:
         list: true
       - name: description
         label: Description
-        description: What does it do? How important is it? What is special about it?
+        component: main_description
 components:
   link:
     label: Link
     type: string
     pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+  main_description:
+    label: Description
+    type: rich-text
+    description: Full description
+    options:
+      media: true
+  
 
       
         
