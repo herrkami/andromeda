@@ -1,9 +1,11 @@
 media:
   - name: documents
-    input: media/documents
+    input: src/media/documents
     output: /media/documents
     categories: [ document ]
-  - name: images # Note: 'name' key is required here
-    input: media/images
+  - name: images
+    input: src/media/images
     output: /media/images
     categories: [ image ]
+content:
+  
