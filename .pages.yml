@@ -83,6 +83,32 @@ content:
       - name: description
         label: Description
         component: main_description
+
+  - name: projects
+    type: collection
+    path: src/md/projects
+    subfolders: false
+    fields:
+      - name: acronym
+        label: Acronym
+        type: string
+        required: true
+      - name: full_title
+        label: Full title
+        type: string
+        required: false
+      - name: links
+        label: Links
+        component: link
+        required: true
+      - name: duration
+        label: Project duration
+        component: duration
+        required: true
+      - name: description
+        label: Project description
+        component: main_description
+        required: false
 components:
   link:
     label: Link
@@ -94,6 +120,16 @@ components:
     description: Full description
     options:
       media: true
+  duration:
+    label: Duration
+    type: object
+    fields:
+      - name: start_date
+        label: Start date
+        type: date
+      - name: end_date
+        label: End date
+        type: date
 settings:
   content:
     nodes:
