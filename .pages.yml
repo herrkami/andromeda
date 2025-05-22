@@ -8,4 +8,55 @@ media:
     output: /media/images
     categories: [ image ]
 content:
-  
+  - name: node_descriptions
+    type: collection
+    path: src/md/nodes
+    fields:
+      - name: title
+        label: Title of the node entry
+        type: text
+        default: Node title
+        hidden: true
+        required: true
+      - name: summary
+        label: Single sentence summary
+        type: text
+        required: true
+      - name: tool_list_proprietary
+        label: Related proprietary tools
+        type: reference
+        options:
+          collection: tools_proprietary
+          multiple: true
+          search: "name,vendor"
+          value: "{id}"
+          label: "{name} ({vendor})"
+  - name: tools_proprietary
+    type: collection
+    path: src/md/tools/proprietary
+    fields:
+      - name: name
+        label: Name of the tool or component
+        type: text
+        required: true
+      - name: vendor
+        label: Tool vendor
+        type: text
+        required: true
+      - name: links
+        label: Related links
+        type: 
+  - name: tools_open_source
+    type: collection
+    path: src/md/tools/open_source
+    fields:
+      - name: name
+        label: Name of the tool or component
+        type: text
+        required: true
+      - name: vendor
+        label: Tool vendor
+        type: text
+        required: true
+      
+        
