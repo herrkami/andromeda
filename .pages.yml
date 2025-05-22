@@ -91,6 +91,10 @@ components:
     description: Full description
     options:
       media: true
+settings:
+  content:
+    nodes:
+      hide: true
   
 
       
