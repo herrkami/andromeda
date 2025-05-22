@@ -91,6 +91,15 @@ content:
       - name: description
         label: Description
         component: main_description
+      - name: tool_list_open_source
+        label: Related open source tools and components
+        type: reference
+        options:
+          collection: tools_open_source
+          multiple: true
+          search: "name,vendor"
+          value: "{path}/{filename}"
+          label: "{name} ({vendor})"
   - name: projects
     label: Research projects
     type: collection
