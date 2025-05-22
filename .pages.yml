@@ -47,7 +47,7 @@ content:
     label: Proprietary tools and components
     type: collection
     path: src/md/tools/proprietary
-    filename: "{name}.md"
+    filename: "{fields.name}.md"
     subfolders: false
     fields:
       - name: name
@@ -69,7 +69,7 @@ content:
     label: Open source tools and components
     type: collection
     path: src/md/tools/open_source
-    filename: "{name}.md"
+    filename: "{fields.name}.md"
     subfolders: false
     fields:
       - name: name
@@ -91,7 +91,7 @@ content:
     label: Research projects
     type: collection
     path: src/md/projects
-    filename: "{acronym}.md"
+    filename: "{fields.acronym}.md"
     subfolders: false
     fields:
       - name: acronym
