@@ -54,8 +54,7 @@ content:
         required: true
       - name: links
         label: Related links
-        type: string
-        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+        component: link
         list: true
   - name: tools_open_source
     type: collection
@@ -67,16 +66,20 @@ content:
         required: true
       - name: repository
         label: Link to the repository
-        type: string
-        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+        component: link
         required: true
       - name: links
         label: Other related links
-        type: string
-        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+        component: link
         list: true
       - name: description
         label: Description
         description: What does it do? How important is it? What is special about it?
+components:
+  link:
+    label: Link
+    type: string
+    pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+
       
         
