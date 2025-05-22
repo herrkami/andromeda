@@ -23,10 +23,19 @@ content:
         type: text
         required: true
       - name: tool_list_proprietary
-        label: Related proprietary tools
+        label: Related proprietary tools and components
         type: reference
         options:
           collection: tools_proprietary
+          multiple: true
+          search: "name,vendor"
+          value: "{id}"
+          label: "{name} ({vendor})"
+      - name: tool_list_open_source
+        label: Related open source tools and components
+        type: reference
+        options:
+          collection: tools_open_source
           multiple: true
           search: "name,vendor"
           value: "{id}"
@@ -40,12 +49,14 @@ content:
         type: text
         required: true
       - name: vendor
-        label: Tool vendor
+        label: Vendor
         type: text
         required: true
       - name: links
         label: Related links
-        type: 
+        type: string
+        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+        list: true
   - name: tools_open_source
     type: collection
     path: src/md/tools/open_source
@@ -54,9 +65,15 @@ content:
         label: Name of the tool or component
         type: text
         required: true
-      - name: vendor
-        label: Tool vendor
-        type: text
+      - name: repository
+        label: Link to the repository
+        type: string
+        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
         required: true
+      - name: links
+        label: Other related links
+        type: string
+        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+        list: true
       
         
