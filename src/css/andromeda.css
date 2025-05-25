@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+}
+svg {
+  height: calc(100vh - 16px);
+}
+.mermaidTooltip {
+    position: absolute;
+    text-align: center;
+    max-width: 200px;
+    padding: 2px;
+    font-family: 'trebuchet ms', verdana, arial;
+    font-size: 12px;
+    background: rgba(230, 230, 230, 0.329);
+    border: 1px solid #8f8f8f;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .mermaid {
+    overflow: hidden;
+  }
+
+  /* Two content windows */
+  .content-container {
+    display: flex;
+    margin: 5px;
+    height: calc(100vh - 16px);
+    /* width: 100vw; */
+  }
+  /* Left side */
+  .diagram {
+    flex-basis: 67%;
+    height: 100%;
+    margin-right: 5pt;
+  }
+  /* Right side */
+  .description {
+    max-width: 33%;
+    
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+  }
+  #node-description {
+    /* border:1px solid black;
+    flex-grow: 1;
+    padding: 5pt;
+    overflow-y: auto; */
+  }
+  .markdown-body {
+    flex-grow: 1;
+    padding: 5pt;
+    overflow-y: auto;
+  }
+  @media (max-width: 767px) {
+    .markdown-body {
+      /* padding: 15px; */
+    }
+  }
+  .description-legend {
+    /* border:1px solid black; */
+    color: #888888;
+    height: auto;
+    padding: 5pt;
+  }

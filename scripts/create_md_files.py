@@ -42,24 +42,36 @@ def get_file_list(directory, nodes):
 
 # Markdown structure:
 #
-#     # Node title
+#   ---
+#   title: 
+#   subtitle: 
+#   links: []
+#   tool_list_proprietary: []
+#   tool_list_open_source: []
+#   ---
 #
-#     Short description
+#     # {{ title }}
+#
+#     {{ subtitle }}
 #
 #     ## Links
-#     - [Google](https://google.de)
+#     {%- for link in links %}
+#    - [link]({{ link }})
+#    {%- endfor %}
 #
 #     ## Tools
 #
 #     ### Proprietary
 #
-#     - example tool 1
-#     - example tool 2
+#     {%- for tools in tool_list_proprietary %}
+#    - [{{ tool.title }}]({{ link.url}})
+#    {%- endfor %}
+# 
+#     ### Open Source,
 #
-#     ### Open Source
-#
-#     - example tool 1
-#     - example tool 2
+#     {%- for link in links %}
+#    - [{{ link.data.title }}]({{ link.url}})
+#    {%- endfor %}
 #
 #     ## Foerderprojekte
 #

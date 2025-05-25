@@ -1,0 +1,30 @@
+{
+  "name": "andromeda",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herrkami/andromeda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/herrkami/andromeda/issues"
+  },
+  "homepage": "https://github.com/herrkami/andromeda#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "d3": "^7.9.0",
+    "marked": "^15.0.12",
+    "mermaid": "^11.6.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
