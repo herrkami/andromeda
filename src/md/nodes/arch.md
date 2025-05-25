@@ -1,10 +1,11 @@
 ---
-title: "{filename}"
+acronym: arch
 subtitle: Chip architecure
 tool_list_proprietary:
   - src/md/tools/proprietary/none.md/
 tool_list_open_source:
   - src/md/tools/open_source/none.md/
+title: "{filename}"
 ---
 # Architecture and specification
 **Summary from Wikipedia**: 
