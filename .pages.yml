@@ -18,7 +18,7 @@ content:
       - name: title
         label: Node acronym
         type: string
-        default: "{filename | remove '.md'}"
+        default: "{filename}"
         hidden: true
         required: true
       - name: subtitle
