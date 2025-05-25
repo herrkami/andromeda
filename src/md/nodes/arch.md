@@ -1,9 +1,10 @@
 ---
-title: arch
+title: Node title
 subtitle: Chip architecure
-links:
 tool_list_proprietary:
-tool_list_open_source: 
+  - src/md/tools/proprietary/none.md/
+tool_list_open_source:
+  - src/md/tools/open_source/none.md/
 ---
 # Architecture and specification
 **Summary from Wikipedia**: 
