@@ -15,11 +15,10 @@ content:
     subfolders: false
     filename: "{fields.title}.md"
     fields:
-      - name: title
-        label: Node acronym
+      - name: acronym
+        label: Node acronym (insert the filename without suffix, e.g. arch.md -> arch)
         type: string
-        default: "{filename}"
-        hidden: true
+        hidden: false
         required: true
       - name: subtitle
         label: Single sentence summary
