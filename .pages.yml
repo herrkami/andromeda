@@ -148,7 +148,7 @@ components:
         label: End date
         type: date
 settings:
-  hide: true
+  hide: false
   content:
     merge: true
   
