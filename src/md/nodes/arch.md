@@ -1,5 +1,5 @@
 ---
-title: Node title
+title: arch
 subtitle: Chip architecure
 tool_list_proprietary:
   - src/md/tools/proprietary/none.md/
