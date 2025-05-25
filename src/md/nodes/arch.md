@@ -1,6 +1,6 @@
 ---
-title: "{filename | remove '.md'}"
-subtitle: "Chip architecure "
+title: "{filename}"
+subtitle: Chip architecure
 tool_list_proprietary:
   - src/md/tools/proprietary/none.md/
 tool_list_open_source:
