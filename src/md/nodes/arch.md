@@ -1,3 +1,10 @@
+---
+title: arch
+subtitle: Chip architecure
+links:
+tool_list_proprietary:
+tool_list_open_source: 
+---
 # Architecture and specification
 **Summary from Wikipedia**: 
 Integrated circuit design, or IC design, is a sub-field of electronics engineering, encompassing the particular logic and circuit design techniques required to design integrated circuits, or ICs.  ICs consist of miniaturized electronic components built into an electrical network on a monolithic semiconductor substrate by photolithography.

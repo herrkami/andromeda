@@ -32,6 +32,7 @@ content:
       - name: tool_list_proprietary
         label: Related proprietary tools and components
         type: reference
+        required: false
         options:
           collection: tools_proprietary
           multiple: true
@@ -41,6 +42,7 @@ content:
       - name: tool_list_open_source
         label: Related open source tools and components
         type: reference
+        required: false
         options:
           collection: tools_open_source
           multiple: true
