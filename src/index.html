@@ -258,7 +258,7 @@
       //   }
       // }
       function displayNodeDescription(id) {
-        const ref = "/md/nodes/" + id.toLowerCase() + ".md";
+        const ref = "md/nodes/" + id.toLowerCase() + ".md";
         fetch(ref)
           .then(response => {
             // When the page is loaded convert it to text
@@ -274,6 +274,7 @@
             // You can now even select part of that html as you would in the regular DOM
             // Example:
             // const docArticle = doc.querySelector('article').innerHTML
+            console.log(md);
             document.getElementById('node-description').innerHTML = marked.parse(md);
           })
           .catch(error => {
