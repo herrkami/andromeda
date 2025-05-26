@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head> 
+    <title>andromEDA</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/mermaid@10.7.0/dist/mermaid.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -237,7 +238,7 @@
       function displayHelp() {
         // document.getElementById("button-edit").disabled = false;
         document.getElementById('node-description').innerHTML = marked.parse(
-          "# EDA knowledge database \nThis web tool is a growing knowledge base for EDA workflows and tools. \n\n## Flowchart\nThe flowchart on the left illustrates common work flows and dependencies in EDA and chip design. \n**Use the mouse wheel to zoom in and out and click and drag to pan.** \nEach node within the chart is clickable. Clicking a node will display the description of that node in the right panel. \n### Mermaid\nThe flowchart is specified in [Mermaid](https://mermaid.live/). \n## Motivation and responsibility\nEDA consists of countless interdependent tools, IPs, and workflows. \nOne way to illustrate the complex connections of all those entities is to include them into a flowchart."
+          "# EDA knowledge database \nThis web tool is a growing knowledge base for EDA workflows and tools. \n\n## Flowchart\nThe flowchart on the left illustrates common work flows and dependencies in EDA and chip design. \n**Use the mouse wheel to zoom in and out and click and drag to pan.** \nEach node within the chart is clickable. Clicking a node will display the description of that node in the right panel. \n## Motivation and responsibility\nEDA consists of countless interdependent tools, library components, and workflows. \nOne way to illustrate the complex connections among all those entities is as a flowchart. \n\nThe project is currently still in stealth mode and glued together by [herrkami](https://github.com/herrkami). Core components are [mermaid](https://mermaid-js.github.io/mermaid/), [marked](https://marked.js.org/), [11ty](https://www.11ty.dev/), and [pages-cms](https://pagescms.org)."
         );
       }
 
