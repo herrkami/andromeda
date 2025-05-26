@@ -235,7 +235,7 @@
       }
 
       function displayHelp() {
-        document.getElementById("button-edit").disabled = true;
+        document.getElementById("button-edit").disabled = false;
         document.getElementById('node-description').innerHTML = marked.parse(
           "# EDA knowledge database \nThis web tool is a growing knowledge base for EDA workflows and tools. \n## Initialization (important!)\n**To initialize this knowledge base, you need to click `Choose Files` below and select all files within the `md`-folder (`N:\\PT-BMBF_5,6\\PT_ElaF\\04_Strategie\\19_Designinitiative%20Mikroelektronik\\EDA_Flowchart\\eda_flows\\md\\`).** \nThe `md`-folder is in the same directory that contains this html file. \nJust navigate into it, select all, and press enter. \nOnce loaded, the nodes in the [flowchart](#Flowchart) will turn green and you'll be able to click on them to obtain more information. \n\n*Why do we have to do this?*\n> This website is just a static bunch of `html` and `css`-files and not (yet) hosted by a web server. \n> As most browsers do not allow web applications to automatically access local files, we require human assistance. \n> Thus, as long as this page is not hosted on a server, we have to live with this inconvenience, unfortunately. \n\n## Flowchart\nThe flowchart on the left illustrates common work flows and dependencies in EDA and chip design. \n**Use the mouse wheel to zoom in and out and click and drag to pan.** \nEach node within the chart is clickable. \nAfter loading the markdown files, clicking reveals more details in this window. \n\n## Edit and contribute\n### Markdown \nThe descriptions of the EDA entities on the left are all written in [Markdown](https://en.wikipedia.org/wiki/Markdown) and stored in separate files in the local `md` directory. \nThe file names are derived from the internal node IDs, which are displayed when you hover over the nodes. \nFeel free to correct/extend/update the descriptions. \n[Markdown syntax](https://www.markdownguide.org/cheat-sheet/) is very straight-forward and extremely easy to learn. \nNo nerd skills are required.\n\nYou can edit the markdown files directly through the browser by clicking on the `Edit`-button below. \nWhen you do so, a markdown editor will open the current description. \nIt autosaves every ten seconds, such that your changes shouldn't be lost, even if you refresh the editor tab. \nOnce you're done, you can click the download button in the editor window and safe the file. \nThe correct file name will automatically be suggested for you. \nTo apply your changes to this knowledge base, move the file into the `md`-directory and overwrite the existing version. \nIf you feel nervous about that, backup the previous version by copying it into the `bak`-folder. \n\nHave fun and contact KoS if you have any questions or problems. \n### Mermaid\nThe flowchart is specified in [Mermaid](https://mermaid.live/). \n### Data safety\nDo not worry about data safety. \nAlthough we need to load some javascript libraries from the world wide web, no data leaves our internal network. The markdown editor runs in your browser. \n## Motivation and responsibility\nEDA consists of countless interdependent tools, IPs, and workflows. \nOne way to illustrate the complex connections of all those entities is to include them into a flowchart. \n\nKoS is responsible for keeping this up-to-date but the entire ElaF-Team is cordially invited to contribute. \n\nWhile the project might first appear quite unconventional and a bit techy, it is actually very simply structured and easy to understand. \nSince data and algorithms are strickly separated, it should be pretty hard to mess things up."
         );
@@ -248,14 +248,40 @@
         );
       }
 
+      // function displayNodeDescription(id) {
+      //   if ((id in md_contents)) {
+      //     document.getElementById('node-description').innerHTML = marked.parse(md_contents[id]);
+      //     document.getElementById("button-edit").disabled = false;
+      //   } else {
+      //     document.getElementById('node-description').innerHTML = "<b>Could not find the description of this node.</b><br>Please load the markdown file <i>" + id.toLowerCase() + ".md</i>";
+      //     document.getElementById("button-edit").disabled = true;
+      //   }
+      // }
       function displayNodeDescription(id) {
-        if ((id in md_contents)) {
-          document.getElementById('node-description').innerHTML = marked.parse(md_contents[id]);
-          document.getElementById("button-edit").disabled = false;
-        } else {
-          document.getElementById('node-description').innerHTML = "<b>Could not find the description of this node.</b><br>Please load the markdown file <i>" + id.toLowerCase() + ".md</i>";
-          document.getElementById("button-edit").disabled = true;
-        }
+        const ref = "/md/nodes/" + id.toLowerCase() + ".md";
+        fetch(ref)
+          .then(response => {
+            // When the page is loaded convert it to text
+            return response.text()
+          })
+          .then(md => {
+            // Initialize the DOM parser
+            // const parser = new DOMParser()
+
+            // Parse the text
+            // const doc = parser.parseFromString(html, "text/html")
+
+            // You can now even select part of that html as you would in the regular DOM
+            // Example:
+            // const docArticle = doc.querySelector('article').innerHTML
+            document.getElementById('node-description').innerHTML = marked.parse(md);
+          })
+          .catch(error => {
+            console.error('Failed to fetch page: ', error)
+          })
+        // console.log("/md/nodes/" + id.toLowerCase() + "/index.html")
+        // document.getElementById('node-description').innerHTML = '<object type="text/html" src=document.location.href + "md/nodes/" + id.toLowerCase() + "/index.html" ></object>';
+        // document.getElementById("button-edit").disabled = false;
       }
 
       var callback = function(id) {
@@ -658,10 +684,10 @@
           <div id="node-description"></div>
         </div>
         <div class="description-legend">
-          <input type="file" onchange="readFilesAndHighlightNodes(this.files)" multiple style="padding: 3pt 0 3pt 0;"/>
-          <button id="button-edit" onclick="openNodeDescriptionInEditor()" title="Opens above description in a markdown editor">Edit Description</button>
+          <!-- <input type="file" onchange="readFilesAndHighlightNodes(this.files)" multiple style="padding: 3pt 0 3pt 0;"/> -->
+          <!-- <button id="button-edit" onclick="openNodeDescriptionInEditor()" title="Opens above description in a markdown editor">Edit Description</button> -->
           <button id="button-help" onclick="displayHelp()" title="Show help">?</button> 
-          <button id="button-dbg" onclick="addColorLabelToNode('LAY', '#00ffff');addColorLabelToNode('LAY', '#00ff00')" title="DBG">?</button> 
+          <!-- <button id="button-dbg" onclick="addColorLabelToNode('LAY', '#00ffff');addColorLabelToNode('LAY', '#00ff00')" title="DBG">?</button>  -->
         </div>
       </div>
     </div>
