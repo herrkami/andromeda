@@ -4,23 +4,30 @@ const AndromedaApp = {
   currentNodeId: null,
   colorLabels: {},
 
-  init() {
+  async init() {
+    await FlowchartLoader.loadFlowchart();
     this.setupEventListeners();
     this.displayHelp();
   },
 
   setupEventListeners() {
-    window.addEventListener('load', () => {
+    // Set up zoom after flowchart is loaded
+    this.setupZoom();
+  },
+
+  setupZoom() {
+    // Wait a bit for mermaid to finish rendering
+    setTimeout(() => {
       const svgs = d3.selectAll(".mermaid svg");
       svgs.each(function() {
         const svg = d3.select(this);
-        const inner = d3.select("g");
+        const inner = svg.select("g");
         const zoom = d3.zoom().on("zoom", function(event) {
           inner.attr("transform", event.transform);
         });
         svg.call(zoom);
       });
-    });
+    }, 100);
   },
 
   displayHelp() {

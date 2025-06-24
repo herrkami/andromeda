@@ -8,6 +8,7 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/md");
     eleventyConfig.addPassthroughCopy("src/html");
+    eleventyConfig.addPassthroughCopy("src/data");
   
     eleventyConfig.addWatchTarget("src/js/*");
     eleventyConfig.addWatchTarget("src/css/*");
