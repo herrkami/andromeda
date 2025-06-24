@@ -15,10 +15,21 @@
   transition: opacity 0.8s ease-out;
 }
 
+/* CSS Custom Properties for easy adjustment */
 .walking-chip {
+  --chip-width: 120px;
+  --chip-height: 60px;
+  --pin-width: 6.67%; /* 8px / 120px */
+  --pin-height: 5%; /* 3px / 60px */
+  --pin-extension: 6.67%; /* 8px / 120px */
+  --chip-radius: 6.67%; /* 8px / 120px */
+  --notch-width: 10%; /* 12px / 120px */
+  --notch-height: 10%; /* 6px / 60px */
+  --notch-top: 13.33%; /* 8px / 60px */
+  
   position: relative;
-  width: 120px;
-  height: 60px;
+  width: var(--chip-width);
+  height: var(--chip-height);
   animation: walk 2s ease-in-out infinite;
 }
 
@@ -27,9 +38,9 @@
   width: 100%;
   height: 100%;
   background: #2c3e50;
-  border-radius: 8px;
+  border-radius: var(--chip-radius);
   position: relative;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 calc(var(--chip-height) * 0.067) calc(var(--chip-height) * 0.133) rgba(0,0,0,0.2);
 }
 
 /* Chip label */
@@ -40,7 +51,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 10px;
+  font-size: calc(var(--chip-height) * 0.167); /* 10px / 60px */
   font-weight: bold;
   font-family: monospace;
 }
@@ -49,63 +60,120 @@
 .chip-body::after {
   content: "";
   position: absolute;
-  top: 8px;
+  top: var(--notch-top);
   left: 50%;
   transform: translateX(-50%);
-  width: 12px;
-  height: 6px;
+  width: var(--notch-width);
+  height: var(--notch-height);
   border-radius: 50%;
   background: #34495e;
 }
 
-/* Left pins (pins 1-4) */
+/* Pin base styles */
 .pin {
   position: absolute;
-  width: 8px;
-  height: 3px;
+  width: var(--pin-width);
+  height: var(--pin-height);
   background: #bdc3c7;
-  border-radius: 1px;
+  border-radius: calc(var(--pin-height) * 0.33); /* Relative border radius */
 }
 
-.pin-1 { top: 8px; left: -8px; animation: pin-left 2s ease-in-out infinite; }
-.pin-2 { top: 20px; left: -8px; animation: pin-left 2s ease-in-out infinite 0.1s; }
-.pin-3 { top: 32px; left: -8px; animation: pin-left 2s ease-in-out infinite 0.2s; }
-.pin-4 { top: 44px; left: -8px; animation: pin-left 2s ease-in-out infinite 0.3s; }
+/* Left pins (pins 1-4) - positions based on chip height */
+.pin-1 { 
+  top: 13.33%; /* 8px / 60px */
+  left: calc(-1 * var(--pin-extension)); 
+  animation: pin-left 2s ease-in-out infinite; 
+}
+.pin-2 { 
+  top: 33.33%; /* 20px / 60px */
+  left: calc(-1 * var(--pin-extension)); 
+  animation: pin-left 2s ease-in-out infinite 0.1s; 
+}
+.pin-3 { 
+  top: 53.33%; /* 32px / 60px */
+  left: calc(-1 * var(--pin-extension)); 
+  animation: pin-left 2s ease-in-out infinite 0.2s; 
+}
+.pin-4 { 
+  top: 73.33%; /* 44px / 60px */
+  left: calc(-1 * var(--pin-extension)); 
+  animation: pin-left 2s ease-in-out infinite 0.3s; 
+}
 
-/* Right pins (pins 5-8) */
-.pin-5 { top: 44px; right: -8px; animation: pin-right 2s ease-in-out infinite 0.4s; }
-.pin-6 { top: 32px; right: -8px; animation: pin-right 2s ease-in-out infinite 0.5s; }
-.pin-7 { top: 20px; right: -8px; animation: pin-right 2s ease-in-out infinite 0.6s; }
-.pin-8 { top: 8px; right: -8px; animation: pin-right 2s ease-in-out infinite 0.7s; }
+/* Right pins (pins 5-8) - positions based on chip height */
+.pin-5 { 
+  top: 73.33%; /* 44px / 60px */
+  right: calc(-1 * var(--pin-extension)); 
+  animation: pin-right 2s ease-in-out infinite 0.4s; 
+}
+.pin-6 { 
+  top: 53.33%; /* 32px / 60px */
+  right: calc(-1 * var(--pin-extension)); 
+  animation: pin-right 2s ease-in-out infinite 0.5s; 
+}
+.pin-7 { 
+  top: 33.33%; /* 20px / 60px */
+  right: calc(-1 * var(--pin-extension)); 
+  animation: pin-right 2s ease-in-out infinite 0.6s; 
+}
+.pin-8 { 
+  top: 13.33%; /* 8px / 60px */
+  right: calc(-1 * var(--pin-extension)); 
+  animation: pin-right 2s ease-in-out infinite 0.7s; 
+}
 
-/* Walking animation for the chip body */
+/* Walking animation for the chip body - using relative units */
 @keyframes walk {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-2px) rotate(-1deg); }
-  50% { transform: translateY(0px) rotate(0deg); }
-  75% { transform: translateY(-2px) rotate(1deg); }
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(calc(-1 * var(--chip-height) * 0.033)) rotate(-1deg); 
+  }
+  50% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  75% { 
+    transform: translateY(calc(-1 * var(--chip-height) * 0.033)) rotate(1deg); 
+  }
 }
 
-/* Left pin walking animation */
+/* Left pin walking animation - using relative units */
 @keyframes pin-left {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-1px) rotate(-5deg); }
-  50% { transform: translateY(1px) rotate(5deg); }
-  75% { transform: translateY(-1px) rotate(-5deg); }
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(calc(-1 * var(--chip-height) * 0.017)) rotate(-5deg); 
+  }
+  50% { 
+    transform: translateY(calc(var(--chip-height) * 0.017)) rotate(5deg); 
+  }
+  75% { 
+    transform: translateY(calc(-1 * var(--chip-height) * 0.017)) rotate(-5deg); 
+  }
 }
 
-/* Right pin walking animation */
+/* Right pin walking animation - using relative units */
 @keyframes pin-right {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(1px) rotate(5deg); }
-  50% { transform: translateY(-1px) rotate(-5deg); }
-  75% { transform: translateY(1px) rotate(5deg); }
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(calc(var(--chip-height) * 0.017)) rotate(5deg); 
+  }
+  50% { 
+    transform: translateY(calc(-1 * var(--chip-height) * 0.017)) rotate(-5deg); 
+  }
+  75% { 
+    transform: translateY(calc(var(--chip-height) * 0.017)) rotate(5deg); 
+  }
 }
 
 .loading-text {
-  margin-top: 20px;
+  margin-top: calc(var(--chip-height) * 0.33); /* 20px relative to 60px chip */
   color: #7f8c8d;
-  font-size: 14px;
+  font-size: calc(var(--chip-height) * 0.233); /* 14px relative to 60px chip */
   font-weight: 500;
   animation: pulse 1.5s ease-in-out infinite;
 }
