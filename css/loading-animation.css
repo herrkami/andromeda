@@ -17,20 +17,21 @@
 
 /* CSS Custom Properties for easy adjustment */
 .walking-chip {
-  --chip-width: 120px;
-  --chip-height: 60px;
-  --pin-width: 6.67%; /* 8px / 120px */
+  --chip-width: 50%;
+  --chip-height: 50%;
+  --pin-width: 20%; /* 8px / 120px */
   --pin-height: 5%; /* 3px / 60px */
-  --pin-extension: 6.67%; /* 8px / 120px */
+  --pin-extension: var(--pin-width); /* 8px / 120px */
   --chip-radius: 6.67%; /* 8px / 120px */
   --notch-width: 10%; /* 12px / 120px */
   --notch-height: 10%; /* 6px / 60px */
   --notch-top: 13.33%; /* 8px / 60px */
+  --timescale: 0.8s;
   
   position: relative;
   width: var(--chip-width);
   height: var(--chip-height);
-  animation: walk 2s ease-in-out infinite;
+  animation: walk var(--timescale) ease-in-out infinite;
 }
 
 /* Main chip body (PDIP-8 package) */
@@ -45,7 +46,7 @@
 
 /* Chip label */
 .chip-body::before {
-  content: "PDIP-8";
+  /* content: "PDIP-8"; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,44 +83,44 @@
 .pin-1 { 
   top: 13.33%; /* 8px / 60px */
   left: calc(-1 * var(--pin-extension)); 
-  animation: pin-left 2s ease-in-out infinite; 
+  animation: pin-left var(--timescale) ease-in-out infinite; 
 }
 .pin-2 { 
   top: 33.33%; /* 20px / 60px */
   left: calc(-1 * var(--pin-extension)); 
-  animation: pin-left 2s ease-in-out infinite 0.1s; 
+  animation: pin-left var(--timescale) ease-in-out infinite calc(1/8 * var(--timescale)); 
 }
 .pin-3 { 
   top: 53.33%; /* 32px / 60px */
   left: calc(-1 * var(--pin-extension)); 
-  animation: pin-left 2s ease-in-out infinite 0.2s; 
+  animation: pin-left var(--timescale) ease-in-out infinite calc(2/8 * var(--timescale)); 
 }
 .pin-4 { 
   top: 73.33%; /* 44px / 60px */
   left: calc(-1 * var(--pin-extension)); 
-  animation: pin-left 2s ease-in-out infinite 0.3s; 
+  animation: pin-left var(--timescale) ease-in-out infinite calc(3/8 * var(--timescale)); 
 }
 
 /* Right pins (pins 5-8) - positions based on chip height */
 .pin-5 { 
   top: 73.33%; /* 44px / 60px */
   right: calc(-1 * var(--pin-extension)); 
-  animation: pin-right 2s ease-in-out infinite 0.4s; 
+  animation: pin-right var(--timescale) ease-in-out infinite calc(4/8 * var(--timescale)); 
 }
 .pin-6 { 
   top: 53.33%; /* 32px / 60px */
   right: calc(-1 * var(--pin-extension)); 
-  animation: pin-right 2s ease-in-out infinite 0.5s; 
+  animation: pin-right var(--timescale) ease-in-out infinite calc(5/8 * var(--timescale)); 
 }
 .pin-7 { 
   top: 33.33%; /* 20px / 60px */
   right: calc(-1 * var(--pin-extension)); 
-  animation: pin-right 2s ease-in-out infinite 0.6s; 
+  animation: pin-right var(--timescale) ease-in-out infinite calc(6/8 * var(--timescale)); 
 }
 .pin-8 { 
   top: 13.33%; /* 8px / 60px */
   right: calc(-1 * var(--pin-extension)); 
-  animation: pin-right 2s ease-in-out infinite 0.7s; 
+  animation: pin-right var(--timescale) ease-in-out infinite calc(7/8 * var(--timescale)); 
 }
 
 /* Walking animation for the chip body - using relative units */
