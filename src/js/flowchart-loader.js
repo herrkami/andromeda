@@ -20,6 +20,9 @@ const FlowchartLoader = {
             querySelector: '#flowchart-container'
           });
           
+          // Mark as loaded to hide loading animation
+          container.classList.add('flowchart-loaded');
+          
           // Re-setup zoom after mermaid renders
           if (typeof AndromedaApp !== 'undefined' && AndromedaApp.setupZoom) {
             AndromedaApp.setupZoom();
@@ -33,6 +36,7 @@ const FlowchartLoader = {
       const container = document.getElementById('flowchart-container');
       if (container) {
         container.innerHTML = '<p style="color: red; padding: 20px;">Error loading flowchart. Please check the console for details.</p>';
+        container.classList.add('flowchart-loaded'); // Hide loading animation on error too
       }
     }
   }
