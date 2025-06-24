@@ -8,6 +8,8 @@ const FlowchartLoader = {
       }
       const flowchartDefinition = await response.text();
       
+      // await new Promise(resolve => setTimeout(resolve, 10000));
+
       const container = document.getElementById('flowchart-container');
       if (container) {
         // Set the content as text content so mermaid can process it

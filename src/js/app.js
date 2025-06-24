@@ -1,8 +1,6 @@
 // Main application logic
 const AndromedaApp = {
-  mdContents: {},
   currentNodeId: null,
-  colorLabels: {},
 
   async init() {
     await FlowchartLoader.loadFlowchart();
@@ -52,6 +50,11 @@ const AndromedaApp = {
   handleNodeClick(id) {
     console.log("Clicked node id:", id);
     this.currentNodeId = id;
+    
+    // Highlight the clicked node
+    NodeHighlighter.highlightNode(id);
+    
+    // Display the node description
     this.displayNodeDescription(id);
   }
 };
