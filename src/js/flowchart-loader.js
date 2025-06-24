@@ -20,8 +20,15 @@ const FlowchartLoader = {
             querySelector: '#flowchart-container'
           });
           
-          // Mark as loaded to hide loading animation
-          container.classList.add('flowchart-loaded');
+          // Hide loading animation with fade effect
+          const loadingOverlay = document.getElementById('loading-overlay');
+          if (loadingOverlay) {
+            loadingOverlay.classList.add('fade-out');
+            // Remove completely after transition
+            setTimeout(() => {
+              loadingOverlay.classList.add('hidden');
+            }, 800);
+          }
           
           // Re-setup zoom after mermaid renders
           if (typeof AndromedaApp !== 'undefined' && AndromedaApp.setupZoom) {
@@ -32,11 +39,19 @@ const FlowchartLoader = {
     } catch (error) {
       console.error('Error loading flowchart:', error);
       
-      // Fallback: show error message
+      // Fallback: show error message and hide loading
       const container = document.getElementById('flowchart-container');
       if (container) {
         container.innerHTML = '<p style="color: red; padding: 20px;">Error loading flowchart. Please check the console for details.</p>';
-        container.classList.add('flowchart-loaded'); // Hide loading animation on error too
+      }
+      
+      // Hide loading animation on error too
+      const loadingOverlay = document.getElementById('loading-overlay');
+      if (loadingOverlay) {
+        loadingOverlay.classList.add('fade-out');
+        setTimeout(() => {
+          loadingOverlay.classList.add('hidden');
+        }, 800);
       }
     }
   }

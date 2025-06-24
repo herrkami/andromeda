@@ -1,6 +1,6 @@
 // Mermaid configuration
 mermaid.initialize({
-  startOnLoad: true,
+  startOnLoad: false, // We'll manually control when mermaid runs
   securityLevel: 'loose',
   theme: 'neutral',
   flowchart: { 
