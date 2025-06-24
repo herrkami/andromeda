@@ -12,6 +12,7 @@
   flex-basis: 67%;
   height: 100%;
   margin-right: 5pt;
+  position: relative;
 }
 
 /* Right side */

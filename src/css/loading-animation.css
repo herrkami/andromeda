@@ -1,11 +1,18 @@
 /* Loading animation - Walking microchip (PDIP-8) */
 .loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
   background: #f8f9fa;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
 }
 
 .walking-chip {
@@ -108,7 +115,21 @@
   50% { opacity: 1; }
 }
 
-/* Hide loading when flowchart is ready */
+/* Fade out loading when flowchart is ready */
 .flowchart-loaded .loading-container {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hide completely after fade transition */
+.flowchart-loaded .loading-container {
+  animation: fadeOutAndHide 0.8s ease-out forwards;
+}
+
+@keyframes fadeOutAndHide {
+  0% { opacity: 1; }
+  100% { 
+    opacity: 0; 
+    visibility: hidden;
+  }
 }
